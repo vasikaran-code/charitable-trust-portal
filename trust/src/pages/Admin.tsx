@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
 import PageHeader from '../components/ui/PageHeader'
 import { donation, donationCategories, paymentMethods } from '../data/donation'
@@ -105,9 +105,9 @@ type DashboardProps = {
 }
 
 function AdminDashboard({ t, locale, onLogout }: DashboardProps) {
-  // Load once on mount; re-render after a status change by bumping `version`.
-  const [version, setVersion] = useState(0)
-  const donations = useMemo(() => getDonations(), [version])
+  // Load donations once, then keep them in state so the list refreshes after
+  // a status change (localStorage is the source of truth — see donations.ts).
+  const [donations, setDonations] = useState<Donation[]>(() => getDonations())
 
   const [search, setSearch] = useState('')
   const [statusFilter, setStatusFilter] = useState<DonationStatus | 'all'>('all')
@@ -117,7 +117,7 @@ function AdminDashboard({ t, locale, onLogout }: DashboardProps) {
 
   const setStatus = (id: string, status: DonationStatus) => {
     updateStatus(id, status)
-    setVersion((v) => v + 1)
+    setDonations(getDonations())
   }
 
   const query = search.trim().toLowerCase()
