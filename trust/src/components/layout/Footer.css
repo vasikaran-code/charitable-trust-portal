@@ -1,0 +1,80 @@
+.footer {
+  background: var(--color-dark);
+  color: #c9d6d0;
+  margin-top: auto;
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 2fr 1fr 1.5fr;
+  padding-block: var(--space-xl);
+}
+
+.footer__name {
+  /* Always-Tamil wordmark — pin a Tamil font so it renders in every language. */
+  font-family: 'Noto Sans Tamil', var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer__name-en {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__intro {
+  max-width: 32ch;
+  margin-bottom: var(--space-md);
+}
+
+.footer__heading {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: var(--space-sm);
+}
+
+.footer__col ul {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer a {
+  color: #c9d6d0;
+}
+
+.footer a:hover {
+  color: var(--color-accent);
+}
+
+.footer__address {
+  font-style: normal;
+  display: grid;
+  gap: 0.15rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Bottom bar */
+.footer__bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+}
+
+.footer__bar-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding-block: var(--space-md);
+}
+
+@media (max-width: 760px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}

@@ -1,0 +1,31 @@
+/* Small "copy to clipboard" button used in the donation UPI/bank sections. */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+
+.copy-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.copy-btn:active {
+  transform: scale(0.97);
+}
+
+/* Green confirmation state after a successful copy. */
+.copy-btn.is-copied {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}

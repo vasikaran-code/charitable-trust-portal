@@ -1,0 +1,220 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: 72px;
+}
+
+/* Brand ------------------------------------------------------------------ */
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text);
+  /* Allow the brand to shrink so it never pushes the layout wider. */
+  min-width: 0;
+  /* Push the nav + controls to the right, grouped together. */
+  margin-inline-end: auto;
+}
+
+.header__brand:hover {
+  color: var(--color-text);
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.header__brand-tamil {
+  /* The wordmark is always Tamil regardless of the UI language, so pin a
+     Tamil-capable font first so it renders correctly on every page. */
+  font-family: 'Noto Sans Tamil', var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  /* Keep each word whole so the wordmark wraps at the space, not mid-word. */
+  overflow-wrap: normal;
+}
+
+.header__brand-en {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Navigation ------------------------------------------------------------- */
+.header__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header__link {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  /* Smoothly animate the colour and the active underline indicator. */
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.header__link:hover,
+.header__link.is-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+.header__cta {
+  padding: 0.55rem 1.25rem;
+}
+
+/* Controls cluster: language selector + mobile toggle -------------------- */
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* Mobile toggle (hidden on desktop) -------------------------------------- */
+.header__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  position: relative;
+}
+
+/* The three-line "hamburger" icon, drawn with pseudo-elements. */
+.header__bars,
+.header__bars::before,
+.header__bars::after {
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  transform: translateX(-50%);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.header__bars {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header__bars::before {
+  content: '';
+  top: -7px;
+}
+
+.header__bars::after {
+  content: '';
+  top: 7px;
+}
+
+/* Animate into an "X" when open. */
+.header__bars.is-open {
+  background: transparent;
+}
+
+.header__bars.is-open::before {
+  top: 0;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.header__bars.is-open::after {
+  top: 0;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Responsive: collapse nav below 900px ----------------------------------- */
+@media (max-width: 900px) {
+  .header__toggle {
+    display: block;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+    /* Animate open/close: hidden state slides up slightly and fades out.
+       `visibility` keeps the links out of the tab order while closed. */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  }
+
+  .header__nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .header__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .header__link {
+    display: block;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header__link:hover,
+  .header__link.is-active {
+    border-bottom-color: var(--color-border);
+  }
+
+  .header__cta {
+    margin-top: var(--space-sm);
+    width: 100%;
+  }
+}
+
+/* Phones: keep the header compact so the wordmark, language selector, and menu
+   button share the top bar comfortably. The English line is hidden here (it
+   still appears in the footer) and the wordmark is sized to fit cleanly. */
+@media (max-width: 480px) {
+  .header__inner {
+    gap: var(--space-sm);
+  }
+
+  .header__brand-tamil {
+    font-size: 0.92rem;
+  }
+
+  .header__brand-en {
+    display: none;
+  }
+}

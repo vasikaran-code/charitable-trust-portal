@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER UPI QR CODE.
+  Replace this file with the trust's REAL QR code image (exported from the
+  bank / UPI app). Keep the file name "upi-qr.svg" — or, if you use a PNG,
+  save it here and update `qrImage` in src/data/donation.ts. A square image
+  of at least 512x512 scans best.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Placeholder UPI QR code">
+  <rect width="512" height="512" fill="#ffffff"/>
+  <rect x="12" y="12" width="488" height="488" rx="18" fill="none" stroke="#e3e8e6" stroke-width="4"/>
+
+  <!-- Three finder patterns (the big squares in a real QR code's corners) -->
+  <g fill="#10271f">
+    <!-- top-left -->
+    <path d="M56 56h96v96H56zM72 72v64h64V72z" fill-rule="evenodd"/>
+    <rect x="88" y="88" width="32" height="32"/>
+    <!-- top-right -->
+    <path d="M360 56h96v96h-96zM376 72v64h64V72z" fill-rule="evenodd"/>
+    <rect x="392" y="88" width="32" height="32"/>
+    <!-- bottom-left -->
+    <path d="M56 360h96v96H56zM72 376v64h64v-64z" fill-rule="evenodd"/>
+    <rect x="88" y="392" width="32" height="32"/>
+  </g>
+
+  <!-- Decorative modules so it reads as a QR at a glance (not scannable) -->
+  <g fill="#15694f">
+    <rect x="200" y="72" width="24" height="24"/>
+    <rect x="248" y="72" width="24" height="24"/>
+    <rect x="296" y="96" width="24" height="24"/>
+    <rect x="72" y="200" width="24" height="24"/>
+    <rect x="120" y="248" width="24" height="24"/>
+    <rect x="96" y="296" width="24" height="24"/>
+    <rect x="200" y="200" width="24" height="24"/>
+    <rect x="248" y="248" width="24" height="24"/>
+    <rect x="296" y="200" width="24" height="24"/>
+    <rect x="200" y="296" width="24" height="24"/>
+    <rect x="344" y="248" width="24" height="24"/>
+    <rect x="392" y="296" width="24" height="24"/>
+    <rect x="344" y="344" width="24" height="24"/>
+    <rect x="248" y="392" width="24" height="24"/>
+    <rect x="200" y="440" width="24" height="24"/>
+    <rect x="296" y="416" width="24" height="24"/>
+    <rect x="392" y="392" width="24" height="24"/>
+    <rect x="416" y="440" width="24" height="24"/>
+  </g>
+
+  <text x="256" y="500" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#5b6770">
+    Sample QR — replace with the trust's real code
+  </text>
+</svg>

@@ -1,0 +1,50 @@
+.program-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.program-card__icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.program-card__title {
+  font-size: 1.2rem;
+}
+
+.program-card__summary {
+  color: var(--color-muted);
+}
+
+.program-card__subhead {
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+
+.program-card__objectives {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.program-card__objectives li {
+  position: relative;
+  padding-left: 1.3rem;
+}
+
+.program-card__objectives li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.program-card__impact {
+  margin-top: auto;
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}

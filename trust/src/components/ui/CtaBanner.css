@@ -1,0 +1,24 @@
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: #fff;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-block: var(--space-lg);
+}
+
+.cta-banner__title {
+  color: #fff;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.cta-banner__text {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 52ch;
+  margin-top: 0.3rem;
+}

@@ -1,0 +1,147 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  /* Keep the form and details at a usable width on very wide screens. */
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* Info column ------------------------------------------------------------ */
+.contact-info h2 {
+  font-size: 1.6rem;
+}
+
+.contact-info .lead {
+  margin: var(--space-xs) 0 var(--space-md);
+}
+
+.contact-info__list {
+  display: grid;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.contact-info__list li {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.contact-info__icon {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.contact-info__list strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.contact-info__list address {
+  font-style: normal;
+  display: grid;
+  gap: 0.1rem;
+  color: var(--color-muted);
+}
+
+.contact-info__social strong {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+/* The social icons sit on a light page, so give them a tinted background. */
+.contact-info__social-links .social__link {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Form ------------------------------------------------------------------- */
+.contact-form {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.contact-form__row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-form label span {
+  color: #c0392b;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(21, 105, 79, 0.12);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  margin-top: var(--space-xs);
+  justify-self: start;
+}
+
+/* Success message -------------------------------------------------------- */
+.contact-success {
+  text-align: center;
+  display: grid;
+  gap: var(--space-sm);
+  justify-items: center;
+  padding-block: var(--space-md);
+  /* Gently fade/slide the confirmation in. */
+  animation: fade-up 0.4s ease both;
+}
+
+.contact-success__icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contact-success p {
+  color: var(--color-muted);
+  max-width: 38ch;
+}
+
+/* Map -------------------------------------------------------------------- */
+.contact-map iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

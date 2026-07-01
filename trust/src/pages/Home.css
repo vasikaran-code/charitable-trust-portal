@@ -1,0 +1,59 @@
+.home-intro {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+  display: grid;
+  gap: var(--space-sm);
+  justify-items: center;
+}
+
+/* Mission & Vision cards */
+.home-mv {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.home-mv__icon {
+  font-size: 2.2rem;
+}
+
+.home-mv h3 {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+}
+
+.home-mv p {
+  color: var(--color-muted);
+}
+
+/* Shared "centre the button" helper for home sections */
+.home-center {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* Recent updates */
+.home-updates {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.home-update {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.home-update__date {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+}
+
+.home-update__title {
+  font-size: 1.1rem;
+}
+
+.home-update p {
+  color: var(--color-muted);
+}

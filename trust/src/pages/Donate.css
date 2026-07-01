@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Donation page styles.
+
+   Covers every section component in src/components/donation/ (hero, causes,
+   the UPI/QR/bank cards, the confirmation form, and the transparency band).
+   All styling reuses the global design tokens from src/index.css.
+   ========================================================================== */
+
+/* Hero ------------------------------------------------------------------- */
+.donate-hero {
+  background: linear-gradient(
+    160deg,
+    var(--color-primary-light),
+    var(--color-surface)
+  );
+  padding-block: var(--space-xl);
+}
+
+.donate-hero__inner {
+  max-width: var(--reading-width);
+  text-align: center;
+  margin-inline: auto;
+}
+
+.donate-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-top: var(--space-xs);
+}
+
+.donate-hero__text {
+  color: var(--color-muted);
+  font-size: 1.125rem;
+  margin-top: var(--space-sm);
+}
+
+.donate-hero__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--space-md);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-primary-dark);
+}
+
+.donate-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+/* Causes ----------------------------------------------------------------- */
+.donate-cause {
+  text-align: center;
+}
+
+.donate-cause__icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.donate-cause__title {
+  font-size: 1.15rem;
+  margin: var(--space-sm) 0 0.4rem;
+}
+
+.donate-cause__text {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Ways to give (UPI / QR / Bank cards) ----------------------------------- */
+.donate-methods {
+  align-items: start;
+}
+
+.donate-method__title {
+  font-size: 1.35rem;
+  margin: 0.2rem 0 0.3rem;
+}
+
+.donate-method__subtitle {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-sm);
+}
+
+.donate-method__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-block: var(--space-sm);
+}
+
+.donate-method__hint {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.donate-method__how {
+  margin-top: var(--space-sm);
+  font-size: 1rem;
+}
+
+.donate-method__steps {
+  list-style: decimal;
+  padding-left: 1.2rem;
+  margin-top: var(--space-xs);
+  display: grid;
+  gap: 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* A highlighted key/value line (the UPI ID). */
+.donate-detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+}
+
+.donate-detail__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
+.donate-detail__value {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  word-break: break-all;
+}
+
+/* QR image --------------------------------------------------------------- */
+.donate-qr {
+  display: grid;
+  place-items: center;
+  padding: var(--space-sm);
+  background: #fff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.donate-qr__image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  /* Keep QR modules crisp when scaled up on large screens. */
+  image-rendering: crisp-edges;
+}
+
+/* Bank details ----------------------------------------------------------- */
+.donate-bank {
+  display: grid;
+  gap: 0.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.donate-bank__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.donate-bank__row dt {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.donate-bank__row dd {
+  font-weight: 600;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Confirmation form ------------------------------------------------------ */
+.donate-confirm {
+  max-width: 720px;
+}
+
+.donate-form {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.donate-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.donate-form__row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.donate-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.donate-form label > span[aria-label] {
+  color: #c0392b;
+}
+
+.donate-form__optional {
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.donate-form input,
+.donate-form select,
+.donate-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.donate-form input:focus,
+.donate-form select:focus,
+.donate-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(21, 105, 79, 0.12);
+}
+
+.donate-form textarea {
+  resize: vertical;
+}
+
+.donate-form .btn {
+  margin-top: var(--space-xs);
+  justify-self: start;
+}
+
+.donate-form__hint {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.donate-form__error {
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
+/* Hidden honeypot field (spam trap) — off-screen, never shown or focusable. */
+.donate-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.donate-form__preview {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.donate-form__preview img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* Success message (mirrors the contact form's confirmation styling). */
+.donate-success {
+  text-align: center;
+  display: grid;
+  gap: var(--space-sm);
+  justify-items: center;
+  padding-block: var(--space-md);
+  animation: fade-up 0.4s ease both;
+}
+
+.donate-success__icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.donate-success p {
+  color: var(--color-muted);
+  max-width: 44ch;
+}
+
+.donate-success__ref {
+  display: grid;
+  gap: 0.2rem;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+}
+
+.donate-success__ref strong {
+  font-size: 1.2rem;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.02em;
+}
+
+/* Transparency band ------------------------------------------------------ */
+.donate-transparency {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.donate-transparency__item {
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.donate-transparency__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--color-primary);
+}
+
+.donate-transparency__label {
+  color: var(--color-muted);
+}
+
+.donate-transparency__note {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-top: var(--space-md);
+  max-width: var(--reading-width);
+  margin-inline: auto;
+}
+
+/* Responsive ------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .donate-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-transparency {
+    grid-template-columns: 1fr;
+  }
+}

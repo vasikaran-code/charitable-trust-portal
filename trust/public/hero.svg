@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-label="People helping their community">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9f5f0"/><stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="url(#sky)"/>
+  <circle cx="700" cy="170" r="90" fill="#e8a317" opacity="0.85"/>
+  <path d="M0 540 Q225 470 450 540 T900 540 V700 H0 Z" fill="#15694f" opacity="0.12"/>
+  <path d="M0 590 Q225 530 450 590 T900 590 V700 H0 Z" fill="#15694f" opacity="0.18"/>
+  <g fill="#15694f">
+    <circle cx="320" cy="350" r="46"/><rect x="280" y="404" width="80" height="150" rx="34"/>
+    <circle cx="450" cy="330" r="54"/><rect x="404" y="392" width="92" height="170" rx="38"/>
+    <circle cx="588" cy="350" r="46"/><rect x="548" y="404" width="80" height="150" rx="34"/>
+  </g>
+  <g fill="#e8a317">
+    <circle cx="450" cy="330" r="54" opacity="0"/>
+    <path d="M450 470 l16 26 -32 0 z"/>
+  </g>
+  <circle cx="450" cy="250" r="26" fill="#e8a317"/>
+  <path d="M450 232 v36 M432 250 h36" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+</svg>

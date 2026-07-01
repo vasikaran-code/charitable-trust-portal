@@ -1,0 +1,165 @@
+.about-overview {
+  max-width: var(--reading-width);
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.about-mv h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.about-mv p {
+  color: var(--color-muted);
+}
+
+.about-values__heading {
+  text-align: center;
+  margin: var(--space-xl) 0 var(--space-md);
+  font-size: 1.4rem;
+}
+
+.about-value h4 {
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+}
+
+.about-value p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Objectives ------------------------------------------------------------- */
+.about-objectives {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.about-objectives li {
+  position: relative;
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) 3rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.about-objectives li::before {
+  content: '✓';
+  position: absolute;
+  left: var(--space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Timeline --------------------------------------------------------------- */
+.about-timeline {
+  max-width: 760px;
+  margin-inline: auto;
+  border-left: 3px solid var(--color-border);
+  padding-left: var(--space-lg);
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.about-timeline__item {
+  position: relative;
+}
+
+.about-timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-lg) - 9px);
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid #fff;
+}
+
+.about-timeline__year {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.about-timeline__text {
+  color: var(--color-muted);
+}
+
+/* Trustees --------------------------------------------------------------- */
+.about-trustee {
+  text-align: center;
+}
+
+.about-trustee__avatar {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto var(--space-sm);
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.about-trustee__name {
+  font-size: 1.15rem;
+}
+
+.about-trustee__role {
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.about-trustee__bio {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Registration ----------------------------------------------------------- */
+.about-legal {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.about-legal dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.about-legal dd {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.about-legal__note {
+  max-width: 900px;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
