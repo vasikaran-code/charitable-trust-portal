@@ -6,9 +6,11 @@
 
 .footer__grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   grid-template-columns: 2fr 1fr 1.5fr;
-  padding-block: var(--space-xl);
+  /* Compact vertical padding — trimmed from --space-xl (4rem) to cut the empty
+     space above and below the columns. */
+  padding-block: var(--space-lg);
 }
 
 .footer__name {
@@ -24,23 +26,25 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .footer__intro {
   max-width: 32ch;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .footer__heading {
   font-size: 1rem;
   color: #fff;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .footer__col ul {
-  display: grid;
-  gap: 0.5rem;
+  /* Quick Links flow horizontally and wrap to the next line as needed. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
 }
 
 .footer a {
@@ -55,7 +59,7 @@
   font-style: normal;
   display: grid;
   gap: 0.15rem;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 /* Bottom bar */
@@ -69,12 +73,15 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--space-xs);
-  padding-block: var(--space-md);
+  /* Slim copyright row — keeps the divider close to the content. */
+  padding-block: var(--space-sm);
 }
 
 @media (max-width: 760px) {
+  /* Stacked columns on mobile: keep a modest gap so sections stay separated
+     without reintroducing large empty space. */
   .footer__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
 }

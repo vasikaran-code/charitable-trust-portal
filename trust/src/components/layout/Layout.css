@@ -6,6 +6,9 @@
 
 .layout__main {
   flex: 1;
+  /* The header is fixed (out of flow), so reserve space for it here to keep
+     page content from sliding underneath the bar. */
+  padding-top: var(--header-height);
 }
 
 /* Skip link for keyboard / screen-reader users. Hidden until focused. */

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { navLinks } from '../../data/navigation'
 import { site } from '../../data/site'
@@ -14,11 +14,21 @@ import './Header.css'
 export default function Header() {
   const { t } = useI18n()
   const [menuOpen, setMenuOpen] = useState(false)
+  // Becomes true once the page is scrolled, so we can add a shadow and slightly
+  // shrink the header for clearer separation from the content below.
+  const [scrolled, setScrolled] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll() // set the correct state on first render (e.g. deep links)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container header__inner">
         {/* Brand / logo — the bilingual wordmark is the trust's fixed identity. */}
         <Link to="/" className="header__brand" onClick={closeMenu}>

@@ -47,6 +47,9 @@
   --space-xl: 4rem;
 
   /* Misc */
+  /* Height of the fixed site header. Shared so the header and the top spacing
+     of the page content (and anchor scrolling) always stay in sync. */
+  --header-height: 72px;
   --radius: 14px;
   --radius-sm: 8px;
   --shadow: 0 6px 24px rgba(16, 39, 31, 0.08);
@@ -109,6 +112,8 @@ html {
   scroll-behavior: smooth;
   /* Safety net: never allow the page to scroll sideways. */
   overflow-x: hidden;
+  /* Offset in-page anchor jumps so the fixed header never covers the target. */
+  scroll-padding-top: var(--header-height);
 }
 
 body {
