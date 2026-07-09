@@ -15,8 +15,7 @@ export default function Footer() {
       <div className="container footer__grid">
         {/* About column */}
         <div className="footer__about">
-          <p className="footer__name">{site.nameTamil}</p>
-          <p className="footer__name-en">{site.nameEnglish}</p>
+          <p className="footer__name">{site.nameEnglish}</p>
           <p className="footer__intro">{t('hero.tagline')}</p>
           <SocialLinks className="footer__social" />
         </div>

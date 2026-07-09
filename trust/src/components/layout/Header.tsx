@@ -34,8 +34,7 @@ export default function Header() {
         <Link to="/" className="header__brand" onClick={closeMenu}>
           <img src="/favicon.svg" alt="" className="header__logo" width="40" height="40" />
           <span className="header__brand-text">
-            <span className="header__brand-tamil">{site.nameTamil}</span>
-            <span className="header__brand-en">{site.nameEnglish}</span>
+            <span className="header__brand-tamil">{site.nameEnglish}</span>
           </span>
         </Link>
 

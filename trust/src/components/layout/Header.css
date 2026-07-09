@@ -64,21 +64,13 @@
 }
 
 .header__brand-tamil {
-  /* The wordmark is always Tamil regardless of the UI language, so pin a
-     Tamil-capable font first so it renders correctly on every page. */
-  font-family: 'Noto Sans Tamil', var(--font-heading);
+  /* The English wordmark — rendered in the heading font on every page. */
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--color-primary);
   /* Keep each word whole so the wordmark wraps at the space, not mid-word. */
   overflow-wrap: normal;
-}
-
-.header__brand-en {
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-muted);
 }
 
 /* Navigation ------------------------------------------------------------- */
@@ -235,9 +227,5 @@
 
   .header__brand-tamil {
     font-size: 0.92rem;
-  }
-
-  .header__brand-en {
-    display: none;
   }
 }

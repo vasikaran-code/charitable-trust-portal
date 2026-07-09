@@ -14,19 +14,11 @@
 }
 
 .footer__name {
-  /* Always-Tamil wordmark — pin a Tamil font so it renders in every language. */
-  font-family: 'Noto Sans Tamil', var(--font-heading);
+  /* The English wordmark — rendered in the heading font. */
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.2rem;
   color: #fff;
-}
-
-.footer__name-en {
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-xs);
 }
 
 .footer__intro {

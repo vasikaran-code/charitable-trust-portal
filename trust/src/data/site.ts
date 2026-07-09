@@ -7,38 +7,42 @@
  */
 
 export const site = {
-  // Trust name in Tamil and English. அறக்கட்டளை = "Trust / Foundation".
-  nameTamil: 'நம்பிக்கை அறக்கட்டளை',
-  nameEnglish: 'Nambikkai Charitable Trust',
-  shortName: 'Nambikkai Trust',
+  // Trust name (the English wordmark from the poster). This is the brand /
+  // legal identity — shown in the header, hero, and footer, and used in the
+  // footer copyright line — and is intentionally not translated per-language.
+  nameEnglish: 'AMMA A J BALA BRIDGE OF HOPE WELFARE TRUST',
+  shortName: 'Bridge of Hope Trust',
 
-  // The trust name and tagline shown to users are translated — see the locale
-  // files (`hero.tagline`, `common.intro`). The names above are the brand
-  // wordmark / legal identity and are intentionally not translated.
+  // The tagline and intro shown to users are translated — see the locale
+  // files (`hero.tagline`, `common.intro`).
 
   // Legal / registration details (shown on the About page).
   registration: {
-    registeredName: 'Nambikkai Charitable Trust',
-    registrationNumber: 'TR/2015/0000123',
+    registeredName: 'AMMA A J BALA BRIDGE OF HOPE WELFARE TRUST',
+    registrationNumber: '6/2026',
+    // PAN was not on the poster — this is a placeholder to replace with the
+    // trust's real PAN.
     panNumber: 'AAATN0000A',
-    section80G: 'AAATN0000A / 80G / 2016-2017',
-    registeredYear: 2015,
+    // The trust holds 12A registration and 80G tax exemption (see the poster).
+    section80G: 'Available',
+    registeredYear: 2026,
   },
 
   contact: {
-    email: 'hello@nambikkaitrust.org',
-    phone: '+91 98765 43210',
-    phoneHref: 'tel:+919876543210',
-    whatsapp: '+91 98765 43210',
+    email: 'antojoe262@gmail.com',
+    phone: '7904028081',
+    phoneHref: 'tel:+917904028081',
+    whatsapp: '7904028081',
     addressLines: [
-      'Nambikkai Charitable Trust',
-      '12, Gandhi Road, Anna Nagar',
-      'Madurai, Tamil Nadu 625020',
-      'India',
+      '11-A, Andhoniyar Kovil Street,',
+      'Beemanagar,',
+      'Marsingpettai Main Road,',
+      'Trichy – 620001,',
+      'Tamil Nadu, India.',
     ],
-    // Google Maps embed URL (a generic Madurai location as a placeholder).
+    // Google Maps embed URL for the trust's locality in Trichy.
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Madurai,Tamil%20Nadu&output=embed',
+      'https://www.google.com/maps?q=Beemanagar%2C%20Tiruchirappalli%2C%20Tamil%20Nadu%20620001&output=embed',
   },
 
   social: [

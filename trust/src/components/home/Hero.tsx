@@ -15,8 +15,7 @@ export default function Hero() {
             {t('hero.badge', { year: site.registration.registeredYear })}
           </span>
           <h1 className="hero__title">
-            <span className="hero__title-tamil">{site.nameTamil}</span>
-            <span className="hero__title-en">{site.nameEnglish}</span>
+            <span className="hero__title-tamil">{site.nameEnglish}</span>
           </h1>
           <p className="hero__tagline">{t('hero.tagline')}</p>
           <div className="hero__actions">
@@ -31,10 +30,10 @@ export default function Hero() {
 
         <div className="hero__media">
           <img
-            src="/hero.svg"
-            alt=""
-            width="900"
-            height="700"
+            src="/ajbala.png"
+            alt="AMMA A J BALA Bridge of Hope Welfare Trust logo"
+            width="527"
+            height="398"
           />
         </div>
       </div>

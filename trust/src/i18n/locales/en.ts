@@ -31,8 +31,8 @@ export const en = {
     visionTitle: 'Our Vision',
     // The trust's one-line introduction (used on Home and About).
     intro:
-      'We are a non-profit organisation working to uplift underprivileged ' +
-      'communities through education, healthcare, and sustainable development.',
+      'A welfare trust bridging lives and building hope — reaching out to the ' +
+      'underprivileged, empowering communities, and building a better society.',
   },
 
   language: {
@@ -59,7 +59,7 @@ export const en = {
 
   hero: {
     badge: 'Serving since {year}',
-    tagline: 'Compassion in action — serving communities, changing lives.',
+    tagline: 'Bridging Lives, Building Hope',
     ctaPrograms: 'Our Programs',
     ctaInvolved: 'Get Involved',
   },
@@ -93,9 +93,9 @@ export const en = {
       'environment, supported by hundreds of dedicated volunteers and ' +
       'well-wishers.',
     mission:
-      'To empower underprivileged communities by providing access to quality ' +
-      'education, healthcare, and livelihood opportunities, enabling them to ' +
-      'lead dignified and self-reliant lives.',
+      'To bridge lives and build hope by reaching out to the underprivileged, ' +
+      'empowering communities, and creating a better society through care, ' +
+      'compassion, and support.',
     vision:
       'A society where every person — regardless of background — has the ' +
       'opportunity to learn, stay healthy, and thrive.',
@@ -132,24 +132,8 @@ export const en = {
     historyTitle: 'History & Milestones',
     history: [
       {
-        year: '2015',
-        text: 'Our trust was founded by a group of volunteers in Madurai.',
-      },
-      {
-        year: '2017',
-        text: 'Launched our first mobile health clinic, reaching 20 villages.',
-      },
-      {
-        year: '2019',
-        text: 'Opened three women’s skill training centres across the district.',
-      },
-      {
-        year: '2022',
-        text: 'Crossed 10,000 lives impacted and expanded into environmental work.',
-      },
-      {
-        year: '2025',
-        text: 'Celebrated 10 years of service with 25,000+ lives impacted.',
+        year: '2026',
+        text: 'The trust was registered (Govt. Reg. No. 6/2026) to serve the underprivileged in and around Trichy.',
       },
     ],
     trusteesEyebrow: 'Our people',
@@ -178,9 +162,8 @@ export const en = {
       registeredSince: 'Registered Since',
     },
     legalNote:
-      'Donations to our trust are eligible for tax exemption under Section 80G ' +
-      'of the Income Tax Act. (Sample placeholder details — replace with the ' +
-      'trust’s official records.)',
+      'The trust holds 12A registration and 80G tax exemption. Donations are ' +
+      'eligible for tax benefits under the Income Tax Act.',
     ctaTitle: 'Want to know more?',
     ctaText:
       'We’re happy to share our annual reports and answer any questions about ' +
@@ -196,83 +179,82 @@ export const en = {
     objectivesLabel: 'Objectives',
     impactLabel: 'Impact',
     categories: {
+      welfare: 'Welfare',
       education: 'Education',
       healthcare: 'Healthcare',
-      environment: 'Environment',
-      livelihood: 'Livelihood',
+      community: 'Community',
     },
     items: {
-      'school-support': {
-        title: 'School Support Programme',
+      'poor-needy': {
+        title: 'Support for the Poor & Needy',
         summary:
-          'Providing books, uniforms, and learning materials to children from ' +
-          'low-income families so that no child drops out for want of resources.',
+          'Providing food, clothing, shelter, and basic essentials to families ' +
+          'struggling to meet their daily needs.',
         objectives: [
-          'Distribute school kits to 2,000 students every academic year',
-          'Run after-school tuition centres in 15 villages',
-          'Award merit scholarships to high-performing students',
+          'Distribute food, clothing, and daily essentials to families in need',
+          'Provide shelter support to the homeless and destitute',
+          'Respond to families facing sudden hardship',
         ],
-        impact: '2,000+ students supported annually across 15 villages.',
+        impact: 'Helping underprivileged families meet their basic needs with dignity.',
       },
-      'mobile-health': {
-        title: 'Mobile Health Clinics',
+      'education-support': {
+        title: 'Education Support',
         summary:
-          'Bringing free medical check-ups, medicines, and health awareness to ' +
-          'remote villages that lack access to primary healthcare.',
+          'Helping children with education, scholarships, and learning ' +
+          'resources so no child is left behind.',
         objectives: [
-          'Conduct weekly health camps in underserved areas',
-          'Provide free medicines and basic diagnostics',
-          'Raise awareness on hygiene, nutrition, and maternal health',
+          'Provide scholarships to children from low-income families',
+          'Supply books, uniforms, and learning materials',
+          'Encourage children to stay in school and keep learning',
         ],
-        impact: '8,000+ patients treated through 200+ free health camps.',
+        impact: 'Enabling underprivileged children to keep learning and build a brighter future.',
       },
-      'green-villages': {
-        title: 'Green Villages Initiative',
+      'medical-assistance': {
+        title: 'Medical Assistance',
         summary:
-          'Planting trees, restoring water bodies, and promoting sustainable ' +
-          'farming to protect the environment for future generations.',
+          'Supporting medical treatment and healthcare for those in need who ' +
+          'cannot afford the care they require.',
         objectives: [
-          'Plant 50,000 saplings across partner villages',
-          'Revive 10 community ponds and rainwater systems',
-          'Train farmers in organic and water-efficient methods',
+          'Support treatment costs for patients in need',
+          'Help families access medicines and healthcare',
+          'Organise health awareness and support',
         ],
-        impact: '50,000+ trees planted and 10 water bodies restored.',
+        impact: 'Helping people in need access timely medical care and treatment.',
       },
-      'skill-training': {
-        title: 'Women Skill Training',
+      'differently-abled': {
+        title: 'Care for Differently Abled',
         summary:
-          'Empowering rural women with vocational skills and micro-enterprise ' +
-          'support to help them earn a sustainable income.',
+          'Empowering differently abled individuals to live independent, ' +
+          'dignified lives.',
         objectives: [
-          'Run tailoring, handicraft, and computer training centres',
-          'Form self-help groups and link them to micro-finance',
-          'Support women in starting small businesses',
+          'Support differently abled individuals with care and resources',
+          'Promote inclusion and equal opportunity',
+          'Help individuals live with dignity and independence',
         ],
-        impact: '1,200+ women trained; 300+ small businesses launched.',
+        impact: 'Empowering differently abled individuals to live with dignity and confidence.',
       },
-      'digital-literacy': {
-        title: 'Digital Literacy for Youth',
+      'women-children': {
+        title: 'Women & Children Welfare',
         summary:
-          'Equipping young people with computer and internet skills to improve ' +
-          'their employability in a digital economy.',
+          'Empowering women and protecting children for a better tomorrow.',
         objectives: [
-          'Set up computer labs in rural schools',
-          'Teach basic computing, typing, and online safety',
-          'Guide students towards online learning resources',
+          'Support and empower women in the community',
+          'Protect and care for vulnerable children',
+          'Promote a safe and nurturing environment for families',
         ],
-        impact: '3,500+ students completed basic digital literacy courses.',
+        impact: 'Supporting women and children on the path to a better future.',
       },
-      'elder-care': {
-        title: 'Elder Care & Nutrition',
+      'community-development': {
+        title: 'Community Development',
         summary:
-          'Supporting elderly people living alone with regular meals, medical ' +
-          'help, and companionship.',
+          'Working towards the overall development and well-being of ' +
+          'communities.',
         objectives: [
-          'Deliver nutritious meals to homebound elders',
-          'Arrange regular health check-ups and medicines',
-          'Organise community gatherings to reduce isolation',
+          'Support initiatives that strengthen local communities',
+          'Encourage participation and self-reliance',
+          'Work towards the long-term well-being of communities',
         ],
-        impact: '500+ elders supported with meals and medical care.',
+        impact: 'Building stronger, more self-reliant communities together.',
       },
     },
     ctaTitle: 'Become a volunteer',
@@ -448,7 +430,9 @@ export const en = {
         'Every contribution — big or small — helps us provide education, ' +
         'healthcare, food, and care to underprivileged communities. Give ' +
         'securely and directly through UPI, QR code, or bank transfer.',
-      impactNote: 'Donations are eligible for tax exemption under Section 80G.',
+      impactNote:
+        'The trust holds 12A & 80G — your donation is eligible for tax ' +
+        'benefits under the Income Tax Act.',
       ctaDonate: 'Donate now',
       ctaConfirm: 'I have already paid',
     },

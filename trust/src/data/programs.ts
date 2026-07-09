@@ -7,10 +7,10 @@
  */
 
 export type ProgramCategory =
+  | 'welfare'
   | 'education'
   | 'healthcare'
-  | 'environment'
-  | 'livelihood'
+  | 'community'
 
 export type Program = {
   id: string
@@ -21,17 +21,17 @@ export type Program = {
 
 /** Category keys in display order (labels come from translations). */
 export const programCategories: ProgramCategory[] = [
+  'welfare',
   'education',
   'healthcare',
-  'environment',
-  'livelihood',
+  'community',
 ]
 
 export const programs: Program[] = [
-  { id: 'school-support', category: 'education', icon: '📚' },
-  { id: 'mobile-health', category: 'healthcare', icon: '🩺' },
-  { id: 'green-villages', category: 'environment', icon: '🌱' },
-  { id: 'skill-training', category: 'livelihood', icon: '🧵' },
-  { id: 'digital-literacy', category: 'education', icon: '💻' },
-  { id: 'elder-care', category: 'healthcare', icon: '🤝' },
+  { id: 'poor-needy', category: 'welfare', icon: '🤲' },
+  { id: 'education-support', category: 'education', icon: '📚' },
+  { id: 'medical-assistance', category: 'healthcare', icon: '🏥' },
+  { id: 'differently-abled', category: 'welfare', icon: '♿' },
+  { id: 'women-children', category: 'welfare', icon: '👩‍👧' },
+  { id: 'community-development', category: 'community', icon: '🌱' },
 ]

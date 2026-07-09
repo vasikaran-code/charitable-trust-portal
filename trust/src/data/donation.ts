@@ -22,21 +22,29 @@
  */
 
 export const donation = {
-  /** UPI ID donors send money to (also encoded in the "Pay via UPI" button). */
-  upiId: 'nambikkaitrust@upi',
+  /**
+   * UPI ID donors send money to (also encoded in the "Pay via UPI" button).
+   * PLACEHOLDER: the poster did not include a UPI ID — replace this with the
+   * trust's real UPI VPA before going live.
+   */
+  upiId: 'bridgeofhope@upi',
   /** Name shown in the donor's UPI app when they pay. */
-  upiPayeeName: 'Nambikkai Charitable Trust',
+  upiPayeeName: 'AMMA A J BALA BRIDGE OF HOPE WELFARE TRUST',
 
-  /** QR code image shown and offered for download. Lives in `public/`. */
+  /**
+   * QR code image shown and offered for download. Lives in `public/`.
+   * PLACEHOLDER image — replace public/donation/upi-qr.svg with the trust's
+   * real UPI QR code.
+   */
   qrImage: '/donation/upi-qr.svg',
 
   /** Bank account for direct transfers (NEFT / IMPS / RTGS). */
   bank: {
-    accountName: 'Nambikkai Charitable Trust',
-    accountNumber: '1234567890123',
-    bankName: 'State Bank of India',
-    branchName: 'Anna Nagar, Madurai',
-    ifsc: 'SBIN0001234',
+    accountName: 'AMMA A J BALA BRIDGE OF HOPE WELFARE TRUST',
+    accountNumber: '309031091763',
+    bankName: 'RBL Bank Ltd',
+    branchName: 'Thillai Nagar, Trichy',
+    ifsc: 'RATN0000561',
     accountType: 'Current',
   },
 

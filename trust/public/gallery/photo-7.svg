@@ -6,5 +6,5 @@
   <circle cx="640" cy="120" r="180" fill="#ffffff" opacity="0.08"/>
   <circle cx="120" cy="520" r="140" fill="#ffffff" opacity="0.08"/>
   <text x="400" y="300" fill="#ffffff" font-family="Poppins, Arial, sans-serif" font-size="44" font-weight="600" text-anchor="middle">Elder Care</text>
-  <text x="400" y="350" fill="#ffffff" opacity="0.85" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Nambikkai Trust</text>
+  <text x="400" y="350" fill="#ffffff" opacity="0.85" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">Bridge of Hope Trust</text>
 </svg>
