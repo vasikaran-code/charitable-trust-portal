@@ -12,11 +12,15 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   color: inherit;
-  transition: background var(--transition), color var(--transition), transform var(--transition);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: background var(--transition), color var(--transition),
+    transform var(--transition), box-shadow var(--transition);
 }
 
-.social__link:hover {
+.social__link:hover,
+.social__link:focus-visible {
   background: var(--color-accent);
   color: var(--color-dark);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.1) rotate(4deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
 }

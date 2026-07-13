@@ -390,6 +390,7 @@ export const te: Messages = {
     labelEmail: 'ఇమెయిల్',
     formName: 'పేరు',
     formEmail: 'ఇమెయిల్',
+    formPhone: 'ఫోన్',
     formSubject: 'విషయం',
     formMessage: 'సందేశం',
     requiredField: 'తప్పనిసరి',
@@ -403,6 +404,7 @@ export const te: Messages = {
     validation: {
       required: 'దయచేసి ఈ ఫీల్డ్‌ను పూరించండి.',
       email: 'దయచేసి సరైన ఇమెయిల్ చిరునామాను నమోదు చేయండి.',
+      phone: 'దయచేసి సరైన ఫోన్ నంబర్‌ను నమోదు చేయండి.',
     },
   },
 

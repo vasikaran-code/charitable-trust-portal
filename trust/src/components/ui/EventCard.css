@@ -18,6 +18,11 @@
 
 .event-card__title {
   font-size: 1.2rem;
+  transition: color var(--transition);
+}
+
+.event-card:hover .event-card__title {
+  color: var(--color-primary);
 }
 
 .event-card__location {
@@ -34,4 +39,10 @@
   padding-top: var(--space-xs);
   font-weight: 600;
   font-family: var(--font-heading);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.event-card:hover .event-card__link {
+  color: var(--color-primary);
+  transform: translateX(3px);
 }

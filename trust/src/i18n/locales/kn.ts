@@ -393,6 +393,7 @@ export const kn: Messages = {
     labelEmail: 'ಇಮೇಲ್',
     formName: 'ಹೆಸರು',
     formEmail: 'ಇಮೇಲ್',
+    formPhone: 'ದೂರವಾಣಿ',
     formSubject: 'ವಿಷಯ',
     formMessage: 'ಸಂದೇಶ',
     requiredField: 'ಅಗತ್ಯ',
@@ -406,6 +407,7 @@ export const kn: Messages = {
     validation: {
       required: 'ದಯವಿಟ್ಟು ಈ ಕ್ಷೇತ್ರವನ್ನು ಭರ್ತಿ ಮಾಡಿ.',
       email: 'ದಯವಿಟ್ಟು ಮಾನ್ಯವಾದ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ.',
+      phone: 'ದಯವಿಟ್ಟು ಮಾನ್ಯವಾದ ದೂರವಾಣಿ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ.',
     },
   },
 

@@ -41,9 +41,59 @@
 
 .footer a {
   color: #c9d6d0;
+  transition: color var(--transition);
 }
 
 .footer a:hover {
+  color: var(--color-accent);
+}
+
+/* Animated underline for the footer quick-links / nav links. The pseudo-element
+   scales in from the left on hover/focus — transform only, never width. */
+.footer__col a {
+  position: relative;
+  display: inline-block;
+}
+
+.footer__col a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.footer__col a:hover::after,
+.footer__col a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Contact list — each row leads with an icon aligned to the first line.
+   Uses `ul.footer__contact` so it overrides the horizontal `.footer__col ul`
+   layout that Quick Links relies on. */
+ul.footer__contact {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.footer__contact-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  /* Nudge the icon down so it lines up with the first line of text. */
+  margin-top: 0.15rem;
   color: var(--color-accent);
 }
 
@@ -51,7 +101,6 @@
   font-style: normal;
   display: grid;
   gap: 0.15rem;
-  margin-bottom: var(--space-xs);
 }
 
 /* Bottom bar */

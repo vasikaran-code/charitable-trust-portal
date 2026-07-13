@@ -389,6 +389,7 @@ export const ta: Messages = {
     labelEmail: 'மின்னஞ்சல்',
     formName: 'பெயர்',
     formEmail: 'மின்னஞ்சல்',
+    formPhone: 'தொலைபேசி',
     formSubject: 'பொருள்',
     formMessage: 'செய்தி',
     requiredField: 'அவசியம்',
@@ -402,6 +403,7 @@ export const ta: Messages = {
     validation: {
       required: 'இந்தப் புலத்தை நிரப்பவும்.',
       email: 'சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.',
+      phone: 'சரியான தொலைபேசி எண்ணை உள்ளிடவும்.',
     },
   },
 

@@ -1,9 +1,37 @@
 .cta-banner {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
   color: #fff;
 }
 
+/* Barely-there decorative glow that drifts slowly behind the content. Sits at
+   very low opacity so it never reduces text contrast. */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60%;
+  height: 180%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cta-banner::before {
+    animation: float 12s var(--ease-out) infinite;
+  }
+}
+
 .cta-banner__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;

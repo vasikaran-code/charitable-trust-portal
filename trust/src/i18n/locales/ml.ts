@@ -390,6 +390,7 @@ export const ml: Messages = {
     labelEmail: 'ഇമെയിൽ',
     formName: 'പേര്',
     formEmail: 'ഇമെയിൽ',
+    formPhone: 'ഫോൺ',
     formSubject: 'വിഷയം',
     formMessage: 'സന്ദേശം',
     requiredField: 'നിർബന്ധമാണ്',
@@ -403,6 +404,7 @@ export const ml: Messages = {
     validation: {
       required: 'ദയവായി ഈ കളം പൂരിപ്പിക്കുക.',
       email: 'ദയവായി സാധുവായ ഒരു ഇമെയിൽ വിലാസം നൽകുക.',
+      phone: 'ദയവായി സാധുവായ ഒരു ഫോൺ നമ്പർ നൽകുക.',
     },
   },
 

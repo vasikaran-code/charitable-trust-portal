@@ -35,6 +35,8 @@ export default function Contact() {
       field.setCustomValidity(t('contact.validation.required'))
     } else if (field.validity.typeMismatch) {
       field.setCustomValidity(t('contact.validation.email'))
+    } else if (field.validity.patternMismatch) {
+      field.setCustomValidity(t('contact.validation.phone'))
     } else {
       field.setCustomValidity('')
     }
@@ -50,7 +52,7 @@ export default function Contact() {
       <section className="section">
         <div className="container contact-grid">
           {/* Contact details */}
-          <div className="contact-info reveal">
+          <div className="contact-info reveal reveal--left">
             <h2>{t('contact.infoTitle')}</h2>
             <p className="lead">{t('contact.infoLead')}</p>
 
@@ -89,7 +91,7 @@ export default function Contact() {
           </div>
 
           {/* Contact form */}
-          <div className="card contact-form-card reveal">
+          <div className="card contact-form-card reveal reveal--right">
             {submitted ? (
               <div className="contact-success" role="status">
                 <span className="contact-success__icon" aria-hidden="true">✓</span>
@@ -131,6 +133,23 @@ export default function Contact() {
                     type="email"
                     required
                     autoComplete="email"
+                    onInvalid={showValidation}
+                    onInput={clearValidation}
+                  />
+                </div>
+                <div className="contact-form__row">
+                  <label htmlFor="phone">
+                    {t('contact.formPhone')}{' '}
+                    <span aria-label={t('contact.requiredField')}>*</span>
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    autoComplete="tel"
+                    inputMode="tel"
+                    pattern="[0-9+()\-\s]{7,}"
                     onInvalid={showValidation}
                     onInput={clearValidation}
                   />

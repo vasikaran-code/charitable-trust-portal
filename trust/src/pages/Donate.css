@@ -79,6 +79,15 @@
   align-items: start;
 }
 
+/* Gentle hover lift for the UPI / QR / Bank cards. `.donate-method` is a
+   `.card`, so the transform/shadow/border-color transitions are already set up
+   by the global `.card` rule — we only supply the resting-to-hover values. */
+.donate-method:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary-light);
+}
+
 .donate-method__title {
   font-size: 1.35rem;
   margin: 0.2rem 0 0.3rem;
@@ -153,6 +162,8 @@
   background: #fff;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
+  /* Clip the subtle QR zoom so it never bleeds past the rounded frame. */
+  overflow: hidden;
 }
 
 .donate-qr__image {
@@ -161,6 +172,12 @@
   height: auto;
   /* Keep QR modules crisp when scaled up on large screens. */
   image-rendering: crisp-edges;
+  transition: transform var(--transition-slow);
+}
+
+/* Only the QR card carries `.donate-qr`, so hovering it gently zooms the code. */
+.donate-method:hover .donate-qr__image {
+  transform: scale(1.03);
 }
 
 /* Bank details ----------------------------------------------------------- */
@@ -175,8 +192,16 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-xs);
-  padding: 0.6rem 0;
+  padding: 0.6rem 0.6rem;
   border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+/* Subtle highlight + a small inward nudge as the pointer moves down the list. */
+.donate-bank__row:hover {
+  background: var(--color-primary-light);
+  transform: translateX(4px);
 }
 
 .donate-bank__row dt {
@@ -238,6 +263,13 @@
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+/* Warm the border toward the brand on hover, ahead of the focus ring. */
+.donate-form input:hover,
+.donate-form select:hover,
+.donate-form textarea:hover {
+  border-color: var(--color-primary-light);
+}
+
 .donate-form input:focus,
 .donate-form select:focus,
 .donate-form textarea:focus {
@@ -263,6 +295,20 @@
 .donate-form__error {
   font-size: 0.85rem;
   color: #c0392b;
+  /* Fade + slide gently down into place when it appears. Global
+     reduced-motion collapses the duration, so it never blocks the message. */
+  animation: donate-error-in var(--transition) both;
+}
+
+@keyframes donate-error-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Hidden honeypot field (spam trap) — off-screen, never shown or focusable. */
@@ -296,7 +342,19 @@
   gap: var(--space-sm);
   justify-items: center;
   padding-block: var(--space-md);
-  animation: fade-up 0.4s ease both;
+  /* Gentle scale + fade entrance after a successful submit. */
+  animation: donate-success-in var(--transition-slow) var(--ease-out) both;
+}
+
+@keyframes donate-success-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .donate-success__icon {

@@ -1,9 +1,28 @@
 .hero {
+  position: relative;
   background: linear-gradient(160deg, var(--color-primary-light), #ffffff 70%);
   overflow: hidden;
 }
 
+/* Decorative, very soft drifting shape — adds gentle life to the backdrop
+   without competing with the content (which sits above via z-index). */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  right: -12%;
+  width: 46vw;
+  max-width: 620px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(232, 163, 23, 0.12), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: drift 20s ease-in-out infinite;
+}
+
 .hero__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
@@ -39,7 +58,28 @@
   gap: var(--space-sm);
 }
 
+.hero__media {
+  position: relative;
+}
+
+/* Soft glow pooled behind the logo — a very subtle, slow breathing halo. */
+.hero__media::before {
+  content: '';
+  position: absolute;
+  inset: 6%;
+  z-index: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(21, 105, 79, 0.18),
+    transparent 68%
+  );
+  filter: blur(30px);
+  animation: glow-pulse 7s ease-in-out infinite;
+}
+
 .hero__media img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   /* Cap the illustration so it stays a comfortable size and is centred in its
      column instead of filling the whole width on large screens. */
@@ -47,29 +87,64 @@
   height: auto;
   margin-inline: auto;
   filter: drop-shadow(0 18px 36px rgba(16, 39, 31, 0.12));
-  /* Very subtle, slow float — adds life without being distracting. */
-  animation: float 6s ease-in-out infinite;
+  /* Enters last in the hero sequence, then breathes with a slow float. */
+  animation: hero-media-in 0.7s var(--ease-out) 0.36s both,
+    float 6s ease-in-out 1.3s infinite;
 }
 
-/* Staggered fade-up entrance for the hero text on page load (all < 600ms). */
+/* Staggered fade-up entrance for the hero text on page load. */
 .hero__badge,
 .hero__title,
 .hero__tagline,
 .hero__actions {
-  animation: fade-up 0.5s ease both;
+  animation: fade-up 0.6s var(--ease-out) both;
 }
 
 .hero__badge {
   animation-delay: 0.05s;
 }
 .hero__title {
-  animation-delay: 0.12s;
+  animation-delay: 0.14s;
 }
 .hero__tagline {
-  animation-delay: 0.2s;
+  animation-delay: 0.24s;
 }
 .hero__actions {
-  animation-delay: 0.28s;
+  animation-delay: 0.34s;
+}
+
+/* Hero-only keyframes. */
+@keyframes hero-media-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-4%, 4%) scale(1.08);
+  }
 }
 
 @media (max-width: 860px) {

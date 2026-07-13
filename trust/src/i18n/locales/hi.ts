@@ -387,6 +387,7 @@ export const hi: Messages = {
     labelEmail: 'ईमेल',
     formName: 'नाम',
     formEmail: 'ईमेल',
+    formPhone: 'फ़ोन',
     formSubject: 'विषय',
     formMessage: 'संदेश',
     requiredField: 'आवश्यक',
@@ -400,6 +401,7 @@ export const hi: Messages = {
     validation: {
       required: 'कृपया यह फ़ील्ड भरें।',
       email: 'कृपया एक मान्य ईमेल पता दर्ज करें।',
+      phone: 'कृपया एक मान्य फ़ोन नंबर दर्ज करें।',
     },
   },
 

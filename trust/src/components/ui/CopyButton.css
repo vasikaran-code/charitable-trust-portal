@@ -23,9 +23,28 @@
   transform: scale(0.97);
 }
 
-/* Green confirmation state after a successful copy. */
+/* Green confirmation state after a successful copy. The colour change rides
+   the `transition: all` above; a one-shot pulse gives a tiny tactile pop. */
 .copy-btn.is-copied {
   border-color: var(--color-primary);
   background: var(--color-primary);
   color: #fff;
+  animation: copy-pop var(--transition) var(--ease-out) both;
+}
+
+/* The "Copied!" label / check glyph fade in softly as the state flips. */
+.copy-btn.is-copied > span[aria-hidden] {
+  animation: fade-in var(--transition) var(--ease-out) both;
+}
+
+@keyframes copy-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

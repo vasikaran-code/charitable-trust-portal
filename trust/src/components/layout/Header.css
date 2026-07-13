@@ -54,6 +54,12 @@
 
 .header__logo {
   flex-shrink: 0;
+  transition: transform var(--transition-slow);
+}
+
+/* Playful-but-restrained logo nudge on hover. */
+.header__brand:hover .header__logo {
+  transform: scale(1.08) rotate(-3deg);
 }
 
 .header__brand-text {
@@ -81,20 +87,39 @@
 }
 
 .header__link {
+  position: relative;
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--color-text);
   padding: 0.35rem 0;
-  border-bottom: 2px solid transparent;
-  /* Smoothly animate the colour and the active underline indicator. */
-  transition: color var(--transition), border-color var(--transition);
+  transition: color var(--transition);
+}
+
+/* Animated underline: a brand-accent bar that wipes in from the left on hover
+   and stays for the active page. GPU-friendly scaleX — no layout shift. */
+.header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
 }
 
 .header__link:hover,
 .header__link.is-active {
   color: var(--color-primary);
-  border-bottom-color: var(--color-accent);
+}
+
+.header__link:hover::after,
+.header__link.is-active::after {
+  transform: scaleX(1);
 }
 
 .header__cta {
@@ -183,8 +208,9 @@
        `visibility` keeps the links out of the tab order while closed. */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    transform: translateY(-10px);
+    transition: opacity 0.28s var(--ease-out), transform 0.28s var(--ease-out),
+      visibility 0.28s;
   }
 
   .header__nav.is-open {

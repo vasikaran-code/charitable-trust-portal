@@ -402,6 +402,7 @@ export const en = {
     labelEmail: 'Email',
     formName: 'Name',
     formEmail: 'Email',
+    formPhone: 'Phone',
     formSubject: 'Subject',
     formMessage: 'Message',
     requiredField: 'required',
@@ -415,6 +416,7 @@ export const en = {
     validation: {
       required: 'Please fill out this field.',
       email: 'Please enter a valid email address.',
+      phone: 'Please enter a valid phone number.',
     },
   },
 

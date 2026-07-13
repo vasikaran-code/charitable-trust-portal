@@ -60,7 +60,16 @@
   --max-width: 1680px;
   /* Comfortable reading width for long-form text blocks (paragraphs, lists). */
   --reading-width: 760px;
-  --transition: 0.2s ease;
+
+  /* Motion — a single easing curve and a few shared durations so every
+     transition across the site feels part of one system. `--ease-out` is a
+     soft, premium deceleration (no bounce, no overshoot). Changing these
+     tokens re-times the whole UI consistently. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: 0.25s var(--ease-out);
+  --transition-fast: 0.15s var(--ease-out);
+  --transition-slow: 0.45s var(--ease-out);
+  --reveal-duration: 0.7s;
 }
 
 /* When an Indic language is active, make its Noto font the PRIMARY family
@@ -292,11 +301,13 @@ h4 {
 .btn--outline:hover {
   background: var(--color-primary);
   color: #fff;
+  transform: translateY(-2px);
 }
 
-/* Soft shadow lift on the solid buttons, and a gentle press-down on click. */
+/* Soft shadow lift on hover, and a gentle press-down on click. */
 .btn--primary:hover,
-.btn--accent:hover {
+.btn--accent:hover,
+.btn--outline:hover {
   box-shadow: 0 8px 20px rgba(16, 39, 31, 0.18);
 }
 
@@ -311,12 +322,16 @@ h4 {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: var(--space-md);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
 }
 
+/* Gentle lift + a whisper of scale, with the border warming to the brand
+   tint. Kept within a 1.02 scale so it feels refined, never bouncy. */
 .card--hover:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary-light);
 }
 
 /* Badge / tag */
@@ -364,7 +379,8 @@ h4 {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity var(--reveal-duration) var(--ease-out),
+    transform var(--reveal-duration) var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -372,6 +388,58 @@ h4 {
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Directional / scale variants — same one-shot `is-visible` toggle, just a
+   different starting offset. Compose in markup, e.g. `reveal reveal--left`.
+   `.is-visible` (two classes) always wins, so every variant settles to none. */
+.reveal--up {
+  transform: translateY(24px);
+}
+.reveal--left {
+  transform: translateX(-28px);
+}
+.reveal--right {
+  transform: translateX(28px);
+}
+.reveal--scale {
+  transform: scale(0.96);
+}
+.reveal--fade {
+  transform: none;
+}
+
+/* Subtle stagger for card grids: when the grid scrolls in, its children fade
+   in one after another. Opacity-only (no transform) so it never fights a
+   card's hover lift or the container's own slide-up. Motion-safe users only. */
+@media (prefers-reduced-motion: no-preference) {
+  .grid.reveal > * {
+    opacity: 0;
+  }
+  .grid.reveal.is-visible > * {
+    animation: fade-in 0.5s var(--ease-out) both;
+  }
+  .grid.reveal.is-visible > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .grid.reveal.is-visible > *:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .grid.reveal.is-visible > *:nth-child(3) {
+    animation-delay: 0.19s;
+  }
+  .grid.reveal.is-visible > *:nth-child(4) {
+    animation-delay: 0.26s;
+  }
+  .grid.reveal.is-visible > *:nth-child(5) {
+    animation-delay: 0.33s;
+  }
+  .grid.reveal.is-visible > *:nth-child(6) {
+    animation-delay: 0.4s;
+  }
+  .grid.reveal.is-visible > *:nth-child(n + 7) {
+    animation-delay: 0.45s;
+  }
 }
 
 /* Page transition: a quick, soft fade-in applied to each page on navigation. */
@@ -387,7 +455,7 @@ h4 {
 }
 
 .page-transition {
-  animation: page-in 0.3s ease both;
+  animation: page-in 0.4s var(--ease-out) both;
 }
 
 /* Hero entrance + a very subtle, slow float for the illustration. */
