@@ -118,9 +118,12 @@ Before going live, replace:
 - The Google Maps location (`mapEmbedUrl` in `src/data/site.ts`).
 - The sample YouTube videos in `src/data/gallery.ts`.
 
-**Contact form:** in Phase 1 the form shows a thank-you message but does not yet
-send anything. To make it live, connect it to an email service (e.g. Formspree,
-EmailJS) or your own API inside `handleSubmit` in `src/pages/Contact.tsx`.
+**Contact form:** submissions are stored in a private Google Sheet through a
+Google Apps Script Web App — no backend required. The website code is complete;
+the one-time Google setup (create the sheet, deploy the script, set
+`VITE_GOOGLE_SCRIPT_URL`) is documented in
+[`docs/CONTACT_FORM_INTEGRATION.md`](docs/CONTACT_FORM_INTEGRATION.md).
+Until that variable is set, submitting shows an error message.
 
 ---
 

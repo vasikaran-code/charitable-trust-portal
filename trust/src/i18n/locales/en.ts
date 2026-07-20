@@ -409,14 +409,25 @@ export const en = {
     send: 'Send message',
     successTitle: 'Thank you!',
     successText:
-      'Your message has been received. We’ll get back to you as soon as we can.',
+      'Your message has been sent successfully. We will contact you shortly.',
     sendAnother: 'Send another message',
     mapTitle: 'Our location on the map',
     mapIframeTitle: 'Map showing the trust’s location',
+  },
+
+  // Shared form messages — used by the contact form and any future form
+  // (volunteer, sponsorship, event registration…).
+  forms: {
     validation: {
       required: 'Please fill out this field.',
       email: 'Please enter a valid email address.',
       phone: 'Please enter a valid phone number.',
+      maxLength: 'Please use {max} characters or fewer.',
+    },
+    errors: {
+      network: 'We could not reach the server. Please check your connection and try again.',
+      validation: 'Please correct the highlighted fields and try again.',
+      unknown: 'Something went wrong. Please try again in a moment.',
     },
   },
 

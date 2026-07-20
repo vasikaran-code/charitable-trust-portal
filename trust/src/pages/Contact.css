@@ -127,6 +127,26 @@
   justify-self: start;
 }
 
+/* Submission error — matches .donate-form__error so both forms read alike. */
+.contact-form__error {
+  font-size: 0.85rem;
+  color: #c0392b;
+  /* Fade + slide gently down into place when it appears. Global
+     reduced-motion collapses the duration, so it never blocks the message. */
+  animation: contact-error-in var(--transition) both;
+}
+
+@keyframes contact-error-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Success message -------------------------------------------------------- */
 .contact-success {
   text-align: center;

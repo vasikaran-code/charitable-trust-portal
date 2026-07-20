@@ -394,14 +394,26 @@ export const hi: Messages = {
     send: 'संदेश भेजें',
     successTitle: 'धन्यवाद!',
     successText:
-      'आपका संदेश प्राप्त हो गया है। हम यथाशीघ्र आपसे संपर्क करेंगे।',
+      'आपका संदेश सफलतापूर्वक भेज दिया गया है। हम शीघ्र ही आपसे संपर्क करेंगे।',
     sendAnother: 'एक और संदेश भेजें',
     mapTitle: 'मानचित्र पर हमारा स्थान',
     mapIframeTitle: 'ट्रस्ट का स्थान दर्शाने वाला मानचित्र',
+  },
+
+  // Shared form messages — used by the contact form and any future form
+  // (volunteer, sponsorship, event registration…).
+  forms: {
     validation: {
       required: 'कृपया यह फ़ील्ड भरें।',
       email: 'कृपया एक मान्य ईमेल पता दर्ज करें।',
       phone: 'कृपया एक मान्य फ़ोन नंबर दर्ज करें।',
+      maxLength: 'कृपया {max} या उससे कम अक्षरों का उपयोग करें।',
+    },
+    errors: {
+      network:
+        'हम सर्वर तक नहीं पहुँच सके। कृपया अपना कनेक्शन जाँचें और फिर से प्रयास करें।',
+      validation: 'कृपया चिह्नित फ़ील्ड ठीक करें और फिर से प्रयास करें।',
+      unknown: 'कुछ गड़बड़ हो गई। कृपया थोड़ी देर बाद फिर से प्रयास करें।',
     },
   },
 
